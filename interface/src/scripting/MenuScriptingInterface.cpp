@@ -23,6 +23,10 @@ MenuScriptingInterface* MenuScriptingInterface::getInstance() {
     return &sharedInstance;
 }
 
+int MenuScriptingInterface::addNumbers(int a, int b) {
+    return a + b;
+}
+
 void MenuScriptingInterface::menuItemTriggered() {
     QAction* menuItemAction = dynamic_cast<QAction*>(sender());
     if (menuItemAction) {
