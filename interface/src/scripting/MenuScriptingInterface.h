@@ -55,6 +55,10 @@ private slots:
     void menuItemTriggered();
 
 public slots:
+
+    // Adding Function For Scripting
+    int addNumbers(int a, int b);
+
     /**jsdoc
      * Add a new top-level menu.
      * @function Menu.addMenu
