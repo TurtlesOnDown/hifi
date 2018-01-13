@@ -76,9 +76,6 @@ Menu::Menu() {
                 dialogsManager.data(), &DialogsManager::toggleLoginDialog);
     }
 
-    // File > Help
-    addActionToQMenuAndActionHash(fileMenu, MenuOption::Help, 0, qApp, SLOT(showHelp()));
-
     // File > Quit
     addActionToQMenuAndActionHash(fileMenu, MenuOption::Quit, Qt::CTRL | Qt::Key_Q, qApp, SLOT(quit()), QAction::QuitRole);
 
@@ -766,6 +763,12 @@ Menu::Menu() {
         defaultScriptsLoc.setPath(defaultScriptsLoc.path() + "developer/utilities/tools/currentAPI.js");
         scriptEngines->loadScript(defaultScriptsLoc.toString());
     });
+
+    // Help --------------------------------------------
+    MenuWrapper* helpMenu = addMenu("Help");
+
+    // Help > Show Help
+    addActionToQMenuAndActionHash(helpMenu, MenuOption::Help, 0, qApp, SLOT(showHelp()));
 
 #if 0 ///  -------------- REMOVED FOR NOW --------------
     addDisabledActionAndSeparator(navigateMenu, "History");
